@@ -1,5 +1,9 @@
 'use strict';
 
 function collectSameElements(collectionA, objectB) {
-  return '实现练习要求，并改写该行代码。';
+  let keys = collectionA.map(item => item.key);
+  let set1 = new Set(keys);
+  let set2 = new Set(objectB.value);
+  let set = new Set([...set1].filter(x => set2.has(x)));
+  return Array.from(set);
 }
